@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+</head>
+<style>
+    .accordion {
+        width: 100%;
+        padding: 20px;
+        text-align: start;
+    }
+
+    .panel {
+        display: none;
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .accordion:after {
+        content: '\002B';
+        float: right;
+        font-weight: bold;
+        font-size: 38px;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+</style>
+
+<body>
+
+
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>Lorem
+
+
+            <script>
+                const acc = document.getElementsByClassName("accordion")
+
+                for (let i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function (event) {
+                        this.classList.toggle(
+                            "active"
+                        )
+                        const panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none"
+                        } else {
+                            panel.style.display = "block"
+                        }
+                    })
+                }
+
+            </script>
+</body>
+
+
+</html>
