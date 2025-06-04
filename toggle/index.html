@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle display of an getElementById</title>
+</head>
+<body>
+    <button  onclick="ToggleFunction()">Toggle me</button>
+    <p id="toggle">Show the text </p>
+
+    <script>
+        
+   function ToggleFunction(){
+    const toggle = document.getElementById("toggle")
+    if(toggle.style.display === "none"){
+        toggle.style.display = "block"
+    }else{
+        toggle.style.display = "none"
+    }
+   }
+ 
+    </script>
+</body>
+</html>

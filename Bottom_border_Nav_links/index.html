@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Border Bottom on Hover</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .topnav {
+      background-color: aliceblue;
+      padding: 16px;
+    }
+
+    a {
+      position: relative;
+      padding: 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Animated bottom border using ::after */
+    a::after {
+      content: '';
+      position: absolute;
+      left: 16px;
+      bottom: 8px;
+      width: 0;
+      height: 2px;
+      background-color: red;
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: calc(100% - 10px); /* 100% minus horizontal padding */
+    }
+
+    .active::after {
+      width: calc(100% - 32px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </div>
+</body>
+
+</html>
